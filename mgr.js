@@ -21,11 +21,11 @@ define(['managerAPI',
     let whiteLabels = [];
 
     if (raceSet == 'a') {
-        blackLabels.push('African Americans');
-        whiteLabels.push('European Americans');
+        blackLabels.push('People with mental illness');
+        whiteLabels.push('People without mental illness');
     } else {
-        blackLabels.push('Black people');
-        whiteLabels.push('White people');
+        blackLabels.push('Mentally Ill');
+        whiteLabels.push('Mentally Well');
     }
 
     API.addGlobal({
