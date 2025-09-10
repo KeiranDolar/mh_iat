@@ -16,15 +16,15 @@ define(['managerAPI',
 
     //Randomly select which of two sets of category labels to use.
     let raceSet = API.shuffle(['a','b'])[0];
-    let blackLabels = [];
-    let whiteLabels = [];
+    let mentallyIllLabels = [];
+    let mentallyHealthyLabels = [];
 
     if (raceSet == 'a') {
-        blackLabels.push('mentally ill');
-        whiteLabels.push('mentally healthy');
+        mentallyIllLabels.push('mentally ill');
+        mentallyHealthyLabels.push('mentally healthy');
     } else {
-        blackLabels.push('mentally ill people');
-        whiteLabels.push('mentally healthy people');
+        mentallyIllLabels.push('mentally ill people');
+        mentallyHealthyLabels.push('mentally healthy people');
     }
 
     API.addGlobal({
@@ -32,8 +32,8 @@ define(['managerAPI',
         //YBYB: change when copying back to the correct folder
         baseURL: './images/',
         raceSet:raceSet,
-        blackLabels:blackLabels,
-        whiteLabels:whiteLabels,
+        mentallyIllLabels:mentallyIllLabels,
+        mentallyHealthyLabels:mentallyHealthyLabels,
         //Select randomly what attribute words to see. 
         //Based on Axt, Feng, & Bar-Anan (2021).
         posWords : API.shuffle([
