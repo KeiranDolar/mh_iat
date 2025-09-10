@@ -1,4 +1,3 @@
-
 define(['managerAPI',
 		'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
 
@@ -21,11 +20,11 @@ define(['managerAPI',
     let whiteLabels = [];
 
     if (raceSet == 'a') {
-        blackLabels.push('People with mental illness');
-        whiteLabels.push('People without mental illness');
+        blackLabels.push('African Americans');
+        whiteLabels.push('European Americans');
     } else {
-        blackLabels.push('Mentally Ill');
-        whiteLabels.push('Mentally Well');
+        blackLabels.push('Black people');
+        whiteLabels.push('White people');
     }
 
     API.addGlobal({
