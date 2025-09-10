@@ -4,9 +4,9 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
 
     return iatExtension({
         category1 : {
-            name : 'Mentally_Ill', //Will appear in the data.
+            name : 'Mentally Ill', //Will appear in the data.
             title : {
-                media : {word : 'Mentally_Ill'}, //Name of the category presented in the task.
+                media : {word : 'Mentally Ill'}, //Name of the category presented in the task.
                 css : {color:'#31940F','font-size':'1.8em'}, //Style of the category title.
                 height : 4 //Used to position the "Or" in the combined block.
             }, 
@@ -22,9 +22,9 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
             stimulusCss : {color:'#31940F','font-size':'2.3em'}
         },    
         category2 : {
-            name : 'Mentally_Well', //Will appear in the data.
+            name : 'Mentally Well', //Will appear in the data.
             title : {
-                media : {word : 'Mentally_Well'}, //Name of the category presented in the task.
+                media : {word : 'Mentally Well'}, //Name of the category presented in the task.
                 css : {color:'#31940F','font-size':'1.8em'}, //Style of the category title.
                 height : 4 //Used to position the "Or" in the combined block.
             }, 
