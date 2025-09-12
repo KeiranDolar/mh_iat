@@ -20,11 +20,11 @@ define(['managerAPI',
     let mentallyHealthyLabels = [];
 
     if (raceSet == 'a') {
-        mentallyIllLabels.push('mentally ill');
-        mentallyHealthyLabels.push('mentally healthy');
+        mentallyIllLabels.push('Mentally Ill');
+        mentallyHealthyLabels.push('Mentally Healthy');
     } else {
-        mentallyIllLabels.push('mentally ill people');
-        mentallyHealthyLabels.push('mentally healthy people');
+        mentallyIllLabels.push('Mentally Ill People');
+        mentallyHealthyLabels.push('Mentally Healthy People');
     }
 
     API.addGlobal({
@@ -37,24 +37,24 @@ define(['managerAPI',
         //Select randomly what attribute words to see. 
         //Based on Axt, Feng, & Bar-Anan (2021).
         posWords : API.shuffle([
-            'Love', 'Cheer', 'Friend', 'Pleasure',
-            'Adore', 'Cheerful', 'Friendship', 'Joyful', 
-            'Smiling','Cherish', 'Excellent', 'Glad', 
-            'Joyous', 'Spectacular', 'Appealing', 'Delight', 
-            'Excitement', 'Laughing', 'Attractive','Delightful', 
-            'Fabulous', 'Glorious', 'Pleasing', 'Beautiful', 
-            'Fantastic', 'Happy', 'Lovely', 'Terrific', 
-            'Celebrate', 'Enjoy', 'Magnificent', 'Triumph'
+            'Loving', 'Faithful', 'Friend', 'Trustworthy',
+            'Honest', 'Cheerful', 'Friendship', 'Joyful', 
+            'Smiling','Admirable', 'Excellent', 'Glad', 
+            'Joyous', 'Spectacular', 'Integrity', 'Delight', 
+            'Prayerful', 'Laughing', 'Strong','Delightful', 
+            'Smart', 'Glorious', 'Pleasing', 'Beautiful', 
+            'Discerning', 'Happy', 'Lovely', 'Terrific', 
+            'Spiritually Strong', 'Enjoyable', 'Righteous', 'Upstanding'
         ]), 
         negWords : API.shuffle([
-            'Abuse', 'Grief', 'Poison', 'Sadness', 
-            'Pain', 'Despise', 'Failure', 'Nasty', 
-            'Angry', 'Detest', 'Horrible', 'Negative', 
-            'Ugly', 'Dirty', 'Gross', 'Evil', 
-            'Rotten','Annoy', 'Disaster', 'Horrific',  
-            'Scorn', 'Awful', 'Disgust', 'Hate', 
-            'Humiliate', 'Selfish', 'Tragic', 'Bothersome', 
-            'Hatred', 'Hurtful', 'Sickening', 'Yucky'
+            'Dangerous', 'Grief', 'Poison', 'Sick', 
+            'Problematic', 'Inferior', 'Failure', 'Sinful', 
+            'Angry', 'Demonic', 'Horrible', 'Embarrassment', 
+            'Weak', 'Unpredictable', 'Oppressed', 'Evil', 
+            'Burden','Nuisance', 'Disaster', 'Horrific',  
+            'Immoral', 'Awful', 'Diseased', 'Possessed', 
+            'Manipulative', 'Selfish', 'Unworthy', 'Bothersome', 
+            'Useless', 'Faithless', 'Sickening', 'Shameful'
         ])
     });
 
