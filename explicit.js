@@ -68,7 +68,7 @@ define(['questAPI'], function(Quest){
         name: 'attributes7',
         stem: 'Which statement best describes you?',
         answers: [
-            {text:'I strongly prefer <%= global.mentallyHealthyLabels %> to <%= mentallyIll.blackLabels %>.',value:7},
+            {text:'I strongly prefer <%= global.mentallyHealthyLabels %> to <%= global.mentallyIllLabels %>.',value:7},
             {text:'I moderately prefer <%= global.mentallyHealthyLabels %> to <%= global.mentallyIllLabels %>.',value:6},
             {text:'I slightly prefer <%= global.mentallyHealthyLabels %> to <%= global.mentallyIllLabels %>.',value:5},
             {text:'I like <%= global.mentallyHealthyLabels %> and <%= global.mentallyIllLabels %> equally.',value:4},
@@ -78,13 +78,13 @@ define(['questAPI'], function(Quest){
         ]
     });
 	
-    API.addQuestionsSet('thermBlack',{
+    API.addQuestionsSet('thermmentallyIll',{
         inherit : 'therm',
         name: 'Tblack_0to10',
         stem: 'How warm or cold do you feel towards <b><%= global.mentallyIllLabels %></b>?'
     });
 
-    API.addQuestionsSet('thermWhite',{
+    API.addQuestionsSet('thermmentallyHealthy',{
         inherit : 'therm',
         name: 'Twhite_0to10',
         stem: 'How warm or cold do you feel towards <b><%= global.mentallyHealthyLabels %></b>?'
@@ -100,11 +100,11 @@ define(['questAPI'], function(Quest){
                     data : [
                         {
                             inherit:'basicPage', 
-                            questions: {inherit:'thermBlack'}
+                            questions: {inherit:'thermmentallyIll'}
                         },
                         {
                             inherit:'basicPage', 
-                            questions: {inherit:'thermWhite'}							
+                            questions: {inherit:'thermmentallyHealthy'}							
                         }
                     ]
                 },
