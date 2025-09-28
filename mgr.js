@@ -155,25 +155,18 @@ define(['managerAPI',
         
         
         {inherit: 'intro'},
-        {
-            mixer:'random',
-            data:[
-                {inherit: 'explicits'},
-
-                // force the instructions to preceed the iat
-                {
-                    mixer: 'wrapper',
-                    data: [
-                        {inherit: 'raceiat_instructions'},
-                        {inherit: 'raceiat'}
-                    ]
-                }
-            ]
-        },
-
-		{inherit: 'uploading'},
-        {inherit: 'lastpage'},
-        {inherit: 'redirect'}
+       API.addSequence([
+    { type: 'isTouch' }, 
+    { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
+    // ... your branch mixer for touch styles ...
+    {inherit: 'intro'},
+    {inherit: 'raceiat_instructions'},
+    {inherit: 'raceiat'},
+    {inherit: 'explicits'},
+    {inherit: 'uploading'},
+    {inherit: 'lastpage'},
+    {inherit: 'redirect'}
+]);
     ]);
 
     return API.script;
