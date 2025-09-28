@@ -124,9 +124,5 @@ define(['managerAPI',
     { inherit: 'lastpage'},
     { inherit: 'redirect'}
 ]);
-        {inherit: 'lastpage'},
-        {inherit: 'redirect'}
-    ]);
-
     return API.script;
 });
