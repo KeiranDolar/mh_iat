@@ -153,7 +153,7 @@ define(['managerAPI',
             ]
         },
     { type: 'isTouch' }, 
-    { type: 'post', path: ['$isTouch', 'raceSet', 'mentallyIllLabels', 'mentallyHealthyLabels'] },
+    { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
     // ... your branch mixer for touch styles ...
     {inherit: 'intro'},
     {inherit: 'raceiat_instructions'},
