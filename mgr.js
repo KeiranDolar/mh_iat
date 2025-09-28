@@ -9,7 +9,7 @@ define(['managerAPI',
 
 	var API    = new Manager();
 	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
-	init_data_pipe(API, 'FYQSkqlIPugK',  {file_type:'csv'});	
+	init_data_pipe(API, 'qA3C1p464CWn',  {file_type:'csv'});	
 
     API.setName('mgr');
     API.addSettings('skip',true);
@@ -80,16 +80,16 @@ define(['managerAPI',
             header: 'Implicit Association Test'
         }],
 
-		raceiat: [{
+        explicits: [{
+            type: 'quest',
+            name: 'explicits',
+            scriptUrl: 'explicits.js'
+        }],
+
+        raceiat: [{
             type: 'time',
             name: 'raceiat',
             scriptUrl: 'raceiat.js'
-		}],
-		
-        explicits: [{
-            type: 'quest',
-            name: 'questions',
-            scriptUrl: 'questions_dg.js'
         }],
 
         lastpage: [{
@@ -114,15 +114,67 @@ define(['managerAPI',
     });
 
     API.addSequence([
-    { type: 'isTouch' }, 
-    { type: 'post', path: ['$isTouch', 'raceSet', 'mentallyIllLabels', 'mentallyHealthyLabels'] },
-    { inherit: 'intro'},                 // Instructions intro
-    { inherit: 'raceiat_instructions'},  // IAT specific instructions
-    { inherit: 'raceiat'},               // The Implicit Association Test
-    { inherit: 'questions_dg'},             // Questions (questions_dg.js) LAST
-    { inherit: 'uploading'},
-    { inherit: 'lastpage'},
-    { inherit: 'redirect'}
-]);
+        { type: 'isTouch' }, //Use Minno's internal touch detection mechanism. 
+        
+        { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
+
+        // apply touch only styles
+        {
+            mixer:'branch',
+            conditions: {compare:'global.$isTouch', to: true},
+            data: [
+                {
+                    type: 'injectStyle',
+                    css: [
+                        '* {color:red}',
+                        '[piq-page] {background-color: #fff; border: 1px solid transparent; border-radius: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); margin-bottom: 20px; border-color: #bce8f1;}',
+                        '[piq-page] > ol {margin: 15px;}',
+                        '[piq-page] > .btn-group {margin: 0px 15px 15px 15px;}',
+                        '.container {padding:5px;}',
+                        '[pi-quest]::before, [pi-quest]::after {content: " ";display: table;}',
+                        '[pi-quest]::after {clear: both;}',
+                        '[pi-quest] h3 { border-bottom: 1px solid transparent; border-top-left-radius: 3px; border-top-right-radius: 3px; padding: 10px 15px; color: inherit; font-size: 2em; margin-bottom: 20px; margin-top: 0;background-color: #d9edf7;border-color: #bce8f1;color: #31708f;}',
+                        '[pi-quest] .form-group > label {font-size:1.2em; font-weight:normal;}',
+
+                        '[pi-quest] .btn-toolbar {margin:15px;float:none !important; text-align:center;position:relative;}',
+                        '[pi-quest] [ng-click="decline($event)"] {position:absolute;right:0;bottom:0}',
+                        '[pi-quest] [ng-click="submit()"] {width:30%;line-height: 1.3333333;border-radius: 6px;}',
+                        // larger screens
+                        '@media (min-width: 480px) {',
+                        ' [pi-quest] [ng-click="submit()"] {width:30%;padding: 10px 16px;font-size: 1.6em;}',
+                        '}',
+                        // phones and smaller screens
+                        '@media (max-width: 480px) {',
+                        ' [pi-quest] [ng-click="submit()"] {padding: 8px 13px;font-size: 1.2em;}',
+                        ' [pi-quest] [ng-click="decline($event)"] {font-size: 0.9em;padding:3px 6px;}',
+                        '}'
+                    ]
+                }
+            ]
+        },
+        
+        
+        {inherit: 'intro'},
+        {
+            mixer:'random',
+            data:[
+                {inherit: 'explicits'},
+
+                // force the instructions to preceed the iat
+                {
+                    mixer: 'wrapper',
+                    data: [
+                        {inherit: 'raceiat_instructions'},
+                        {inherit: 'raceiat'}
+                    ]
+                }
+            ]
+        },
+
+		{inherit: 'uploading'},
+        {inherit: 'lastpage'},
+        {inherit: 'redirect'}
+    ]);
+
     return API.script;
 });
