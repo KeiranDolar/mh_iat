@@ -152,10 +152,6 @@ define(['managerAPI',
                 }
             ]
         },
-        
-        
-        {inherit: 'intro'},
-       API.addSequence([
     { type: 'isTouch' }, 
     { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
     // ... your branch mixer for touch styles ...
