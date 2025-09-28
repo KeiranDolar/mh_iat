@@ -197,7 +197,7 @@ define(['questAPI'], function(Quest){
 		},
 		{
 			type : 'selectOne',
-			name : 'ethnicity’,
+			name : 'ethnicity',
 			stem : "What is your race or ethnicity?",
 			answers: [
 				'White',
@@ -217,7 +217,7 @@ define(['questAPI'], function(Quest){
 	// * `decline`: allow participants to decline answering
 	// * `noSubmit`: do not display the submit button (we rely on `autoSubmit` for submitting)
 	API.addPagesSet('basicPage', {
-		progressBar: '<%= pagesMeta.number %> out of 27,
+		progressBar: '<%= pagesMeta.number %> out of 27',
 		header: 'Please rate your agreement with the following statement',
 		headerStyle : {'font-size':'1em'},
 		questions : {inherit:{set:'baQuestions', type:'exRandom'}},
