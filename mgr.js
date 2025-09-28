@@ -115,46 +115,15 @@ define(['managerAPI',
 
     API.addSequence([
     { type: 'isTouch' }, 
-        
     { type: 'post', path: ['$isTouch', 'raceSet', 'mentallyIllLabels', 'mentallyHealthyLabels'] },
-
-    // apply touch only styles
-    {
-        mixer:'branch',
-        conditions: {compare:'global.$isTouch', to: true},
-        data: [
-            // ... style code ...
-        ]
-    },
-    
-    {inherit: 'intro'},                 // Instructions intro
-    {inherit: 'raceiat_instructions'},  // IAT specific instructions
-    {inherit: 'raceiat'},               // The Implicit Association Test
-    {inherit: 'questions'},             // Questions (questions_dg.js) LAST
-    {inherit: 'uploading'},
-    {inherit: 'lastpage'},
-    {inherit: 'redirect'}
+    { inherit: 'intro'},                 // Instructions intro
+    { inherit: 'raceiat_instructions'},  // IAT specific instructions
+    { inherit: 'raceiat'},               // The Implicit Association Test
+    { inherit: 'questions_dg'},             // Questions (questions_dg.js) LAST
+    { inherit: 'uploading'},
+    { inherit: 'lastpage'},
+    { inherit: 'redirect'}
 ]);
-        
-        
-        {inherit: 'intro'},
-        {
-            mixer:'random',
-            data:[
-                {inherit: 'explicits'},
-
-                // force the instructions to preceed the iat
-                {
-                    mixer: 'wrapper',
-                    data: [
-                        {inherit: 'raceiat_instructions'},
-                        {inherit: 'raceiat'}
-                    ]
-                }
-            ]
-        },
-
-		{inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
     ]);
