@@ -82,8 +82,8 @@ define(['managerAPI',
 
         explicits: [{
             type: 'quest',
-            name: 'explicits',
-            scriptUrl: 'explicits.js'
+            name: 'explicit',
+            scriptUrl: 'questions_dg.js'
         }],
 
         raceiat: [{
