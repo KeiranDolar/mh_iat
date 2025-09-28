@@ -80,16 +80,16 @@ define(['managerAPI',
             header: 'Implicit Association Test'
         }],
 
+		raceiat: [{
+            type: 'time',
+            name: 'raceiat',
+            scriptUrl: 'raceiat.js'
+        }],
+
         explicits: [{
             type: 'quest',
             name: 'explicits',
             scriptUrl: 'explicits.js'
-        }],
-
-        raceiat: [{
-            type: 'time',
-            name: 'raceiat',
-            scriptUrl: 'raceiat.js'
         }],
 
         lastpage: [{
