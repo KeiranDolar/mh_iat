@@ -80,16 +80,16 @@ define(['managerAPI',
             header: 'Implicit Association Test'
         }],
 
-        explicits: [{
-            type: 'quest',
-            name: 'explicit',
-            scriptUrl: 'questions_dg.js'
-        }],
-
-        raceiat: [{
+		raceiat: [{
             type: 'time',
             name: 'raceiat',
             scriptUrl: 'raceiat.js'
+		}],
+		
+        explicits: [{
+            type: 'quest',
+            name: 'questions',
+            scriptUrl: 'questions_dg.js'
         }],
 
         lastpage: [{
@@ -116,7 +116,7 @@ define(['managerAPI',
     API.addSequence([
     { type: 'isTouch' }, 
         
-    { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
+    { type: 'post', path: ['$isTouch', 'raceSet', 'mentallyIllLabels', 'mentallyHealthyLabels'] },
 
     // apply touch only styles
     {
@@ -130,7 +130,7 @@ define(['managerAPI',
     {inherit: 'intro'},                 // Instructions intro
     {inherit: 'raceiat_instructions'},  // IAT specific instructions
     {inherit: 'raceiat'},               // The Implicit Association Test
-    {inherit: 'explicits'},             // Explicit questions (questions_dg.js) LAST
+    {inherit: 'questions'},             // Questions (questions_dg.js) LAST
     {inherit: 'uploading'},
     {inherit: 'lastpage'},
     {inherit: 'redirect'}
