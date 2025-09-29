@@ -216,14 +216,21 @@ define(['questAPI'], function(Quest){
 	// Create the generic pages template:
 	// * `decline`: allow participants to decline answering
 	// * `noSubmit`: do not display the submit button (we rely on `autoSubmit` for submitting)
-	API.addPagesSet('basicPage', {
-		progressBar: '<%= pagesMeta.number %> out of 27',
-		header: 'Please rate your agreement with the following statement',
-		headerStyle : {'font-size':'1em'},
-		questions : {inherit:{set:'baQuestions', type:'exRandom'}},
-		decline:true,
-		noSubmit:true
-	});
+API.addPagesSet('basicPage', {
+    progressBar: '<%= pagesMeta.number %> out of 27',
+    header: 'Please rate your agreement with the following statement',
+    headerStyle : {'font-size':'1em'},
+    questions : {inherit:{set:'baQuestions', type:'exSequential'}},
+    decline:true,
+    noSubmit:true
+});
+
+API.addSequence([
+    {inherit: 'basicPage'},  // This will show all baQuestions in order, if exSequential is supported
+    {
+        questions: ['gender', 'age', 'religion', 'ethnicity']
+    }
+]);
 
 
 
