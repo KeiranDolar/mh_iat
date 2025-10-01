@@ -141,7 +141,7 @@ define(['questAPI'], function(Quest){
 		{
 			inherit : 'basicSelect',
 			name : 'ba23',
-			stem : "As far as possible, mental health services should be provided through community based facilities."
+			stem : "As far as possible mental health services should be provided through community based facilities."
 		},
 		{
 			inherit : 'basicSelect',
@@ -227,9 +227,6 @@ API.addPagesSet('basicPage', {
 
 API.addSequence([
     {inherit: 'basicPage'},  // This will show all baQuestions in order, if exSequential is supported
-    {
-        questions: ['ba1', 'ba2', 'ba3', 'ba4', 'ba5', 'ba6', 'ba7', 'ba8', 'ba8', 'ba9', 'ba10', 'ba11', 'ba12', 'ba13', 'ba14', 'ba15', 'ba16', 'ba17', 'ba18', 'ba19', 'ba20', 'ba21', 'ba22', 'ba23', 'ba24', 'ba25', 'ba26', 'ba27', 'gender', 'age', 'religion', 'ethnicity']
-    }
 ]);
 
 	// Return the script to piquest's god, or something of that sort.
