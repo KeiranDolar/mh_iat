@@ -17,7 +17,7 @@ define(['questAPI'], function(Quest){
 			"2- Agree Slightly",
 			"3- Neither Agree nor Disagree",
 			"4- Disagree Slightly",
-			"7- Disagree Strongly"
+			"5- Disagree Strongly"
 		],
 		help: '<%= pagesMeta.number < 3 %>',
 		helpText: 'Selecting an answer once colors it blue.<br/>' +
@@ -96,7 +96,7 @@ define(['questAPI'], function(Quest){
 		{
 			inherit : 'basicSelect',
 			name : 'ba14',
-			stem : "There are sufficient existing services for people with mental illness ."
+			stem : "There are sufficient existing services for people with mental illness."
 		},
 		{
 			inherit : 'basicSelect',
@@ -217,7 +217,7 @@ define(['questAPI'], function(Quest){
 	// * `decline`: allow participants to decline answering
 	// * `noSubmit`: do not display the submit button (we rely on `autoSubmit` for submitting)
 API.addPagesSet('basicPage', {
-    progressBar: '<%= pagesMeta.number %> out of 27',
+    progressBar: '<%= pagesMeta.number %> out of 31',
     header: 'Please rate your agreement with the following statement',
     headerStyle : {'font-size':'1em'},
     questions : {inherit:{set:'baQuestions', type:'exSequential'}},
@@ -228,29 +228,9 @@ API.addPagesSet('basicPage', {
 API.addSequence([
     {inherit: 'basicPage'},  // This will show all baQuestions in order, if exSequential is supported
     {
-        questions: ['gender', 'age', 'religion', 'ethnicity']
+        questions: ['ba1', 'ba2', 'ba3', 'ba4', 'ba5', 'ba6', 'ba7', 'ba8', 'ba8', 'ba9', 'ba10', 'ba11', 'ba12', 'ba13', 'ba14', 'ba15', 'ba16', 'ba17', 'ba18', 'ba19', 'ba20', 'ba21', 'ba22', 'ba23', 'ba24', 'ba25', 'ba26', 'ba27', 'gender', 'age', 'religion', 'ethnicity']
     }
 ]);
-
-
-
-	// ### Sequence
-	// We use a simple mixer here to repeat a simple page that inherits from the basicPage.
-	// The basic page randomly inherits a question, therfore we get a different question for every page.
-	// We use exRandom in the basicPage page so that questions don't randomly appear more than once.
-	API.addSequence([
-		{
-			mixer : 'repeat',
-			times : 27,
-			data : [
-				{inherit : 'basicPage'}
-			]
-		},
-		{
-			questions: ['gender', 'age', 'religion', 'ethnicity']
-		}
-	]);
-
 
 	// Return the script to piquest's god, or something of that sort.
 	return API.script;
