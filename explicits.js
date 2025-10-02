@@ -221,11 +221,13 @@ define(['questAPI'], function(Quest){
             name: 'denomination',
             stem: 'What Christian denomination do you identify with the most?',
             answers: [
-                'Employed full-time',
-                'Employed part-time',
-                'Unemployed',
-                'Student',
-                'Retired'
+                'Baptist',
+                'Methodist',
+                'Evangelical',
+                'Pentecostal',
+				'Latter Day Saints',
+                'Church of Christ',
+				'Non Denominational'
             ]
         }
     ]
