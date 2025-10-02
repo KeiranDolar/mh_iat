@@ -19,7 +19,7 @@ define(['questAPI'], function(Quest){
         questions : [{
           inherit :'basicSelect',
           name: 'weightpref',
-          stem: 'Which statement best describes you?,
+          stem: 'Which statement best describes you?',
           answers: [
             'I strongly prefer Thin People to Fat People.',
             'I moderately prefer Thin People to Fat People.',
@@ -39,23 +39,6 @@ define(['questAPI'], function(Quest){
               'Extremely cold'
        ]
       }),
-
-
-    API.addSequence([
-      
-    {
-        inherit:'basicPage', 
-        questions: {inherit:'thermBlack'}
-    },
-    {
-        inherit:'basicPage', 
-        questions: {inherit:'thermWhite'}
-    },
-    {
-        inherit:'basicPage', 
-        questions: {inherit:'attributes7'}
-    }
-    ]);
   
     return API.script;
 });
