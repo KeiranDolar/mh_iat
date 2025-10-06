@@ -37,24 +37,24 @@ define(['managerAPI',
         //Select randomly what attribute words to see. 
         //Based on Axt, Feng, & Bar-Anan (2021).
         posWords : API.shuffle([
-            'Loving', 'Faithful', 'Friend', 'Trustworthy',
+            'Loving', 'Friend', 'Trustworthy',
             'Honest', 'Cheerful', 'Friendship', 'Joyful', 
             'Smiling','Admirable', 'Excellent', 'Glad', 
-            'Joyous', 'Spectacular', 'Integrity', 'Delight', 
-            'Prayerful', 'Laughing', 'Strong','Delightful', 
+            'Joyous', 'Spectacular', 'Integrity', 'Delight',
+			'Laughing', 'Strong','Delightful', 
             'Smart', 'Glorious', 'Pleasing', 'Beautiful', 
-            'Discerning', 'Happy', 'Lovely', 'Terrific', 
-            'Spiritually Strong', 'Enjoyable', 'Righteous', 'Upstanding'
+            'Discerning', 'Happy', 'Lovely', 'Terrific',
+			'Enjoyable', 'Righteous', 'Upstanding'
         ]), 
         negWords : API.shuffle([
             'Dangerous', 'Grief', 'Poison', 'Sick', 
-            'Problematic', 'Inferior', 'Failure', 'Sinful', 
+            'Problematic', 'Inferior', 'Failure', 
             'Angry', 'Demonic', 'Horrible', 'Embarrassment', 
-            'Weak', 'Unpredictable', 'Oppressed', 'Evil', 
+            'Weak', 'Unpredictable', 'Evil', 
             'Burden','Nuisance', 'Disaster', 'Horrific',  
-            'Immoral', 'Awful', 'Diseased', 'Possessed', 
-            'Manipulative', 'Selfish', 'Unworthy', 'Bothersome', 
-            'Useless', 'Faithless', 'Sickening', 'Shameful'
+            'Immoral', 'Awful', 'Diseased', 'Manipulative',
+			'Selfish', 'Unworthy', 'Bothersome', 
+            'Useless', 'Sickening', 'Shameful'
         ])
     });
 
