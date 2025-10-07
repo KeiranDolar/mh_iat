@@ -193,7 +193,6 @@ define(['questAPI'], function(Quest){
 			inherit: 'basicText',
 			name: 'age',
 			stem: 'How old are you, in years?'
-            ]
         },
         {
             inherit: 'basicSelect',
